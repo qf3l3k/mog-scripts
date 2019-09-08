@@ -1,0 +1,11 @@
+---
+- name: Install MOG Masternode
+  hosts: all
+  remote_user: root
+  sudo: yes
+  tasks:
+     - name: Transfer the script
+       copy: src=mogwai_install.sh dest=/root mode=0777
+
+     - name: Execute the script
+       command: sh /root/mogwai_install.sh
